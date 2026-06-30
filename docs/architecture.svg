@@ -299,15 +299,21 @@
 </circle>
 <text x="763" y="325" fill="white" font-family="monospace" font-size="8" font-weight="bold">synced</text>
 
-<!-- ═══ STEP BADGES ════════════════════════════════════════════════════════ -->
-<circle cx="237" cy="242" r="11" fill="white" stroke="#3b82f6" stroke-width="2"/>
-<text x="237" y="246" text-anchor="middle" fill="#2563eb" font-family="monospace" font-size="10" font-weight="bold">①</text>
+<!-- ═══ STEP BADGES — positioned above/below lines, away from labels ════ -->
+<!-- ① above the Claude→MCP line -->
+<circle cx="238" cy="220" r="12" fill="white" stroke="#3b82f6" stroke-width="2.5"/>
+<text x="238" y="225" text-anchor="middle" fill="#2563eb" font-family="monospace" font-size="11" font-weight="bold">①</text>
+<line x1="238" y1="232" x2="238" y2="244" stroke="#3b82f6" stroke-width="1" stroke-dasharray="2 2" opacity="0.5"/>
 
-<circle cx="668" cy="162" r="11" fill="white" stroke="#8b5cf6" stroke-width="2"/>
-<text x="668" y="166" text-anchor="middle" fill="#7c3aed" font-family="monospace" font-size="10" font-weight="bold">③</text>
+<!-- ③ above the MCP→Stripe line -->
+<circle cx="665" cy="136" r="12" fill="white" stroke="#8b5cf6" stroke-width="2.5"/>
+<text x="665" y="141" text-anchor="middle" fill="#7c3aed" font-family="monospace" font-size="11" font-weight="bold">③</text>
+<line x1="665" y1="148" x2="665" y2="158" stroke="#8b5cf6" stroke-width="1" stroke-dasharray="2 2" opacity="0.5"/>
 
-<circle cx="668" cy="338" r="11" fill="white" stroke="#10b981" stroke-width="2"/>
-<text x="668" y="342" text-anchor="middle" fill="#059669" font-family="monospace" font-size="10" font-weight="bold">②</text>
+<!-- ② below the MCP→DB line -->
+<circle cx="665" cy="386" r="12" fill="white" stroke="#10b981" stroke-width="2.5"/>
+<text x="665" y="391" text-anchor="middle" fill="#059669" font-family="monospace" font-size="11" font-weight="bold">②</text>
+<line x1="665" y1="374" x2="665" y2="374" stroke="#10b981" stroke-width="1" stroke-dasharray="2 2" opacity="0.5"/>
 
 <!-- ═══ FOOTER ════════════════════════════════════════════════════════════ -->
 <rect x="260" y="464" width="440" height="24" rx="12" fill="white" stroke="#e2e8f0" stroke-width="1"/>

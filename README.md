@@ -53,51 +53,6 @@ That's the layer every company has to build itself. The provider can't.
 ## Architecture
 
 ![Live Architecture](docs/architecture.svg)
-
-```mermaid
-flowchart TD
-    A("🖥️ Claude Desktop\nAI Client") -- "JSON-RPC over stdio\ntools/call" --> B
-
-    subgraph B["⚙️ Payment Ops MCP Server — The Orchestrator"]
-        direction TB
-        B1["🔌 MCP Layer\nsrc/mcp_server.py\nTools · Resources · Prompts"]
-        B2["🧠 Service Layer\nsrc/services/payment_service.py\nBusiness Rules · 90-day Policy · Audit Log"]
-        B3["🔗 Integration Layer\nstripe_client.py · database.py"]
-        B1 --> B2 --> B3
-    end
-
-    B3 -- "Stripe Python SDK\nrk_test_ key only" --> C
-    B3 -- "SQLAlchemy ORM" --> D
-
-    subgraph C["💳 Stripe API (Test Mode)"]
-        C1["PaymentIntents"]
-        C2["Customers"]
-        C3["Refunds"]
-    end
-
-    subgraph D["🗄️ Orders Database"]
-        D1["customers"]
-        D2["orders"]
-        D3["refund_log ✅ audit trail"]
-    end
-
-    style A fill:#6366f1,color:#fff,stroke:#4338ca
-    style B fill:#1e293b,color:#fff,stroke:#334155
-    style B1 fill:#0f172a,color:#94a3b8,stroke:#334155
-    style B2 fill:#0f172a,color:#94a3b8,stroke:#334155
-    style B3 fill:#0f172a,color:#94a3b8,stroke:#334155
-    style C fill:#635bff,color:#fff,stroke:#4f46e5
-    style D fill:#0369a1,color:#fff,stroke:#0284c7
-```
-
-**Three layers inside the server:**
-
-| Layer | File | Job |
-|---|---|---|
-| 🔌 MCP | `src/mcp_server.py` | Define tools/resources/prompts, talk JSON-RPC |
-| 🧠 Service | `src/services/payment_service.py` | Orchestrate Stripe + DB, enforce rules |
-| 🔗 Integration | `src/integrations/stripe_client.py` + `src/db/database.py` | Talk to Stripe SDK and the DB |
-
 ---
 
 ## Tools
