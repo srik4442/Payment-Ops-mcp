@@ -40,19 +40,20 @@ def get_customer(stripe_customer_id: str) -> stripe.Customer:
 
 
 def create_refund(
-    payment_intent_id: str,
+    charge_or_intent_id: str,
     amount_cents: int | None = None,
     reason: str = "requested_by_customer",
     idempotency_key: str | None = None,
 ) -> stripe.Refund:
-    params: dict = {"payment_intent": payment_intent_id, "reason": reason}
+    # Always use payment_intent parameter — we store pi_xxx IDs in the DB
+    params: dict = {"payment_intent": charge_or_intent_id, "reason": reason}
     if amount_cents is not None:
         params["amount"] = amount_cents
     kwargs = {}
     if idempotency_key:
         kwargs["idempotency_key"] = idempotency_key
     refund = stripe.Refund.create(**params, **kwargs)
-    logger.info("Created refund %s for intent %s", refund.id, payment_intent_id)
+    logger.info("Created refund %s for %s", refund.id, charge_or_intent_id)
     return refund
 
 

@@ -45,10 +45,9 @@ def seed():
 
             for amount in data["charges"]:
                 intent = stripe_client.create_test_charge(stripe_cust.id, amount)
-                charge_id = intent.latest_charge if isinstance(intent.latest_charge, str) else (intent.latest_charge.id if intent.latest_charge else intent.id)
                 order = Order(
                     customer_id=customer.id,
-                    stripe_charge_id=charge_id,
+                    stripe_charge_id=intent.id,  # always store pi_xxx — used as payment_intent in refunds
                     amount_cents=amount,
                     currency="usd",
                     status="paid",

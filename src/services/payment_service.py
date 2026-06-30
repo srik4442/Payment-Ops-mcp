@@ -156,7 +156,7 @@ def issue_refund(
     idempotency_key = f"refund-{order.id}-{reason[:20].replace(' ', '_')}"
     try:
         refund = sc.create_refund(
-            payment_intent_id=order.stripe_charge_id,
+            charge_or_intent_id=order.stripe_charge_id,
             amount_cents=amount_cents,
             reason="requested_by_customer",
             idempotency_key=idempotency_key,

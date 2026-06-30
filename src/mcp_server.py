@@ -4,11 +4,17 @@ Orchestrates between Stripe (payments) and an internal orders DB.
 All logging goes to stderr — never stdout (stdout carries the JSON-RPC stream).
 """
 import sys
+import os
 import logging
 from typing import Optional
+from pathlib import Path
+
+# Ensure project root is on sys.path regardless of how the server is launched
+sys.path.insert(0, str(Path(__file__).parent.parent))
+
 from dotenv import load_dotenv
 
-load_dotenv()
+load_dotenv(Path(__file__).parent.parent / ".env")
 
 logging.basicConfig(stream=sys.stderr, level=logging.INFO)
 
@@ -89,6 +95,9 @@ def issue_refund(
     Business rule: refunds older than 90 days are automatically rejected by the server.
     The charge_id and amount_cents are optional — omitting charge_id refunds the most
     recent paid order; omitting amount_cents issues a full refund.
+
+    IMPORTANT: charge_id must be a Stripe Payment Intent ID (pi_xxx format),
+    NOT a charge ID (ch_xxx). Use the intent ID shown in list_payments output.
     """
     db = SessionLocal()
     try:
