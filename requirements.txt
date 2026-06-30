@@ -1,0 +1,10 @@
+mcp[cli]
+stripe
+sqlalchemy
+pydantic
+pydantic-settings
+python-dotenv
+fastapi
+uvicorn
+pytest
+pytest-cov

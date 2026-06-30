@@ -1,0 +1,8 @@
+[run]
+source = src
+
+[report]
+omit =
+    src/mcp_server.py
+    src/db/database.py
+    src/integrations/stripe_client.py
