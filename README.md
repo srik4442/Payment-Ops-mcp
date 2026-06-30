@@ -7,38 +7,6 @@
 
 ---
 
-## Demo
-
-> **Prompt typed into Claude Desktop:**
-> *"A customer, sarah@example.com, emailed about a double charge. Look into it and refund the most recent payment."*
-
-```
-STEP 1  Claude calls lookup_customer("sarah@example.com")
-        → queries Orders DB → finds Sarah + Stripe customer ID
-
-STEP 2  Claude calls list_payments(customer="cus_xxx")
-        → queries Stripe (test mode) → returns recent charges
-
-STEP 3  Claude PAUSES:
-        "I found a duplicate $49.99 charge. Refund the most recent one? Please confirm."
-        → human-in-the-loop gate before any money moves
-
-STEP 4  You reply "yes"
-        → Claude calls issue_refund(confirmed=True)
-        → refund issued in Stripe
-        → order status updated + audit row written to DB
-
-STEP 5  Claude confirms:
-        "Refunded $49.99 to Sarah (re_3To18wCLuf9LMqJ11xb4XutS).
-         Logged in orders DB as duplicate-charge reversal."
-```
-
-![Demo](docs/demo.gif)
-
-▶ [Watch full demo (MP4)](docs/demo.mp4)
-
----
-
 ## Why This Exists
 
 Stripe ships an official MCP server — but it only knows Stripe. Real companies wrap the payment provider with internal data and business rules. This server is that orchestration layer:
@@ -55,6 +23,7 @@ That's the layer every company has to build itself. The provider can't.
 ## Architecture
 
 ![Live Architecture](docs/architecture.svg)
+
 ---
 
 ## Tools
@@ -212,6 +181,36 @@ Least-privilege: the key can only touch Charges, Customers, and Refunds. Even if
 
 **Why store `pi_xxx` IDs (PaymentIntent) instead of `ch_xxx` (Charge)?**  
 Modern Stripe workflows are built around PaymentIntents. Refunds issued via `payment_intent` parameter work reliably across all payment methods, while legacy `charge` IDs can cause mismatch issues.
+
+---
+
+## Demo
+
+> **Prompt typed into Claude Desktop:**  
+> *"A customer, sarah@example.com, emailed about a double charge. Look into it and refund the most recent payment."*
+
+```
+STEP 1  Claude calls lookup_customer("sarah@example.com")
+        → queries Orders DB → finds Sarah + Stripe customer ID
+
+STEP 2  Claude calls list_payments(customer="cus_xxx")
+        → queries Stripe (test mode) → returns recent charges
+
+STEP 3  Claude PAUSES:
+        "I found a duplicate $49.99 charge. Refund the most recent one? Please confirm."
+        → human-in-the-loop gate before any money moves
+
+STEP 4  You reply "yes"
+        → Claude calls issue_refund(confirmed=True)
+        → refund issued in Stripe
+        → order status updated + audit row written to DB
+
+STEP 5  Claude confirms:
+        "Refunded $49.99 to Sarah (re_3To18wCLuf9LMqJ11xb4XutS).
+         Logged in orders DB as duplicate-charge reversal."
+```
+
+<video src="docs/demo.mp4" controls width="100%"></video>
 
 ---
 
