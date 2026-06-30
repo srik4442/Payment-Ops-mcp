@@ -33,7 +33,9 @@ STEP 5  Claude confirms:
          Logged in orders DB as duplicate-charge reversal."
 ```
 
-*Add demo GIF here after recording*
+![Demo](docs/demo.gif)
+
+▶ [Watch full demo (MP4)](docs/demo.mp4)
 
 ---
 
