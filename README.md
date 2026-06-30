@@ -52,6 +52,8 @@ That's the layer every company has to build itself. The provider can't.
 
 ## Architecture
 
+![Live Architecture](docs/architecture.svg)
+
 ```mermaid
 flowchart TD
     A("🖥️ Claude Desktop\nAI Client") -- "JSON-RPC over stdio\ntools/call" --> B
