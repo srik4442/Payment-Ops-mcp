@@ -210,7 +210,7 @@ STEP 5  Claude confirms:
          Logged in orders DB as duplicate-charge reversal."
 ```
 
-<video src="docs/demo.mp4" controls width="100%"></video>
+![Demo](https://github.com/user-attachments/assets/e1d036ec-f04d-48a7-877c-bb36f04b1cd3)
 
 ---
 
