@@ -1,321 +1,316 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 520" width="960" height="520">
 <defs>
   <!-- Motion paths -->
-  <path id="p1" d="M182,255 C230,255 255,255 288,255"/>
-  <path id="p2" d="M605,190 C645,190 675,170 738,158"/>
-  <path id="p3" d="M605,322 C645,322 675,348 738,360"/>
-  <path id="p1r" d="M288,265 C255,265 230,265 182,265"/>
-  <path id="p2r" d="M738,168 C700,178 660,196 605,200"/>
-  <path id="p3r" d="M738,370 C700,360 660,336 605,332"/>
+  <path id="p1"  d="M185,252 C225,252 255,252 290,252"/>
+  <path id="p2"  d="M607,190 C645,190 695,168 740,158"/>
+  <path id="p3"  d="M607,322 C645,322 695,348 740,360"/>
+  <path id="p1r" d="M290,263 C255,263 225,263 185,263"/>
+  <path id="p2r" d="M740,168 C700,178 650,198 607,200"/>
+  <path id="p3r" d="M740,370 C700,360 650,332 607,332"/>
 
-  <!-- Neon glow filters -->
-  <filter id="neon-cyan" x="-50%" y="-50%" width="200%" height="200%">
-    <feGaussianBlur stdDeviation="3" result="b"/>
-    <feMerge><feMergeNode in="b"/><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+  <!-- Soft shadow filters -->
+  <filter id="shadow-blue" x="-20%" y="-20%" width="140%" height="140%">
+    <feDropShadow dx="0" dy="2" stdDeviation="4" flood-color="#3b82f6" flood-opacity="0.2"/>
   </filter>
-  <filter id="neon-purple" x="-50%" y="-50%" width="200%" height="200%">
-    <feGaussianBlur stdDeviation="4" result="b"/>
-    <feMerge><feMergeNode in="b"/><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+  <filter id="shadow-purple" x="-20%" y="-20%" width="140%" height="140%">
+    <feDropShadow dx="0" dy="3" stdDeviation="6" flood-color="#7c3aed" flood-opacity="0.2"/>
   </filter>
-  <filter id="neon-green" x="-50%" y="-50%" width="200%" height="200%">
-    <feGaussianBlur stdDeviation="3" result="b"/>
-    <feMerge><feMergeNode in="b"/><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+  <filter id="shadow-violet" x="-20%" y="-20%" width="140%" height="140%">
+    <feDropShadow dx="0" dy="2" stdDeviation="4" flood-color="#6d28d9" flood-opacity="0.2"/>
   </filter>
-  <filter id="neon-violet" x="-50%" y="-50%" width="200%" height="200%">
-    <feGaussianBlur stdDeviation="3" result="b"/>
-    <feMerge><feMergeNode in="b"/><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+  <filter id="shadow-green" x="-20%" y="-20%" width="140%" height="140%">
+    <feDropShadow dx="0" dy="2" stdDeviation="4" flood-color="#059669" flood-opacity="0.2"/>
   </filter>
-  <filter id="soft-glow" x="-30%" y="-30%" width="160%" height="160%">
-    <feGaussianBlur stdDeviation="6" result="b"/>
+  <filter id="dot-glow-blue" x="-80%" y="-80%" width="260%" height="260%">
+    <feGaussianBlur stdDeviation="2.5" result="b"/>
+    <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+  </filter>
+  <filter id="dot-glow-purple" x="-80%" y="-80%" width="260%" height="260%">
+    <feGaussianBlur stdDeviation="2.5" result="b"/>
+    <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+  </filter>
+  <filter id="dot-glow-green" x="-80%" y="-80%" width="260%" height="260%">
+    <feGaussianBlur stdDeviation="2.5" result="b"/>
     <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
   </filter>
 
   <!-- Gradients -->
-  <radialGradient id="bg-radial" cx="50%" cy="50%" r="70%">
-    <stop offset="0%" style="stop-color:#0a0f1e"/>
-    <stop offset="100%" style="stop-color:#020408"/>
-  </radialGradient>
-  <linearGradient id="claude-bg" x1="0%" y1="0%" x2="100%" y2="100%">
-    <stop offset="0%" style="stop-color:#001a2e"/>
-    <stop offset="100%" style="stop-color:#000d1a"/>
+  <linearGradient id="bg-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+    <stop offset="0%" style="stop-color:#f0f4ff"/>
+    <stop offset="100%" style="stop-color:#f8fafc"/>
   </linearGradient>
-  <linearGradient id="mcp-bg" x1="0%" y1="0%" x2="100%" y2="100%">
-    <stop offset="0%" style="stop-color:#0d0020"/>
-    <stop offset="100%" style="stop-color:#050010"/>
+  <linearGradient id="claude-fill" x1="0%" y1="0%" x2="100%" y2="100%">
+    <stop offset="0%" style="stop-color:#eff6ff"/>
+    <stop offset="100%" style="stop-color:#dbeafe"/>
   </linearGradient>
-  <linearGradient id="stripe-bg" x1="0%" y1="0%" x2="100%" y2="100%">
-    <stop offset="0%" style="stop-color:#120028"/>
-    <stop offset="100%" style="stop-color:#080015"/>
+  <linearGradient id="mcp-fill" x1="0%" y1="0%" x2="100%" y2="100%">
+    <stop offset="0%" style="stop-color:#faf5ff"/>
+    <stop offset="100%" style="stop-color:#f3e8ff"/>
   </linearGradient>
-  <linearGradient id="db-bg" x1="0%" y1="0%" x2="100%" y2="100%">
-    <stop offset="0%" style="stop-color:#001a0d"/>
-    <stop offset="100%" style="stop-color:#000d06"/>
+  <linearGradient id="stripe-fill" x1="0%" y1="0%" x2="100%" y2="100%">
+    <stop offset="0%" style="stop-color:#f5f3ff"/>
+    <stop offset="100%" style="stop-color:#ede9fe"/>
+  </linearGradient>
+  <linearGradient id="db-fill" x1="0%" y1="0%" x2="100%" y2="100%">
+    <stop offset="0%" style="stop-color:#f0fdf4"/>
+    <stop offset="100%" style="stop-color:#dcfce7"/>
   </linearGradient>
 
-  <!-- Scanline gradient -->
-  <linearGradient id="scan" x1="0%" y1="0%" x2="0%" y2="100%">
-    <stop offset="0%" style="stop-color:#00e5ff;stop-opacity:0"/>
-    <stop offset="50%" style="stop-color:#00e5ff;stop-opacity:0.06"/>
-    <stop offset="100%" style="stop-color:#00e5ff;stop-opacity:0"/>
+  <!-- Shine sweep gradient -->
+  <linearGradient id="shine" x1="0%" y1="0%" x2="100%" y2="0%">
+    <stop offset="0%" style="stop-color:#ffffff;stop-opacity:0"/>
+    <stop offset="50%" style="stop-color:#ffffff;stop-opacity:0.5"/>
+    <stop offset="100%" style="stop-color:#ffffff;stop-opacity:0"/>
   </linearGradient>
 
   <!-- Arrow markers -->
-  <marker id="a-cyan" markerWidth="7" markerHeight="5" refX="6" refY="2.5" orient="auto">
-    <polygon points="0 0,7 2.5,0 5" fill="#00e5ff"/>
+  <marker id="a-blue" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+    <polygon points="0 0,8 3,0 6" fill="#3b82f6"/>
   </marker>
-  <marker id="a-violet" markerWidth="7" markerHeight="5" refX="6" refY="2.5" orient="auto">
-    <polygon points="0 0,7 2.5,0 5" fill="#a855f7"/>
+  <marker id="a-violet" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+    <polygon points="0 0,8 3,0 6" fill="#8b5cf6"/>
   </marker>
-  <marker id="a-green" markerWidth="7" markerHeight="5" refX="6" refY="2.5" orient="auto">
-    <polygon points="0 0,7 2.5,0 5" fill="#00ff88"/>
+  <marker id="a-green" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+    <polygon points="0 0,8 3,0 6" fill="#10b981"/>
   </marker>
 </defs>
 
-<!-- ═══ BACKGROUND ═══════════════════════════════════════════════════════ -->
-<rect width="960" height="520" fill="url(#bg-radial)" rx="16"/>
+<!-- ═══ BACKGROUND ════════════════════════════════════════════════════════ -->
+<rect width="960" height="520" fill="url(#bg-grad)" rx="16"/>
 
-<!-- Grid overlay -->
-<g opacity="0.06" stroke="#00e5ff" stroke-width="0.5">
-  <line x1="0" y1="65" x2="960" y2="65"/> <line x1="0" y1="130" x2="960" y2="130"/>
+<!-- Subtle grid -->
+<g stroke="#e2e8f0" stroke-width="1" opacity="0.8">
+  <line x1="0" y1="65" x2="960" y2="65"/>  <line x1="0" y1="130" x2="960" y2="130"/>
   <line x1="0" y1="195" x2="960" y2="195"/> <line x1="0" y1="260" x2="960" y2="260"/>
   <line x1="0" y1="325" x2="960" y2="325"/> <line x1="0" y1="390" x2="960" y2="390"/>
   <line x1="0" y1="455" x2="960" y2="455"/>
-  <line x1="96" y1="0" x2="96" y2="520"/> <line x1="192" y1="0" x2="192" y2="520"/>
-  <line x1="288" y1="0" x2="288" y2="520"/> <line x1="384" y1="0" x2="384" y2="520"/>
-  <line x1="480" y1="0" x2="480" y2="520"/> <line x1="576" y1="0" x2="576" y2="520"/>
+  <line x1="96" y1="0" x2="96" y2="520"/>  <line x1="192" y1="0" x2="192" y2="520"/>
+  <line x1="288" y1="0" x2="288" y2="520"/> <line x1="480" y1="0" x2="480" y2="520"/>
   <line x1="672" y1="0" x2="672" y2="520"/> <line x1="768" y1="0" x2="768" y2="520"/>
   <line x1="864" y1="0" x2="864" y2="520"/>
 </g>
 
-<!-- Background accent dots -->
-<g fill="#00e5ff" opacity="0.15">
-  <circle cx="50" cy="50" r="1.5"/> <circle cx="150" cy="120" r="1"/>
-  <circle cx="900" cy="80" r="1.5"/> <circle cx="850" cy="450" r="1"/>
-  <circle cx="60" cy="420" r="1"/> <circle cx="920" cy="300" r="1.5"/>
-  <circle cx="240" cy="490" r="1"/> <circle cx="700" cy="490" r="1"/>
-</g>
-
-<!-- Scanline sweep (animates down) -->
-<rect width="960" height="80" fill="url(#scan)" opacity="0.8" y="-80">
-  <animateTransform attributeName="transform" type="translate" from="0,0" to="0,600" dur="4s" repeatCount="indefinite"/>
+<!-- Shine sweep animation -->
+<rect width="120" height="520" fill="url(#shine)" opacity="0.6" x="-120">
+  <animateTransform attributeName="transform" type="translate" from="-120,0" to="1080,0" dur="5s" repeatCount="indefinite"/>
 </rect>
 
 <!-- ═══ TOP STATUS BAR ════════════════════════════════════════════════════ -->
-<rect x="340" y="12" width="280" height="24" rx="12" fill="#050b14" stroke="#00e5ff" stroke-width="1" opacity="0.8"/>
-<circle cx="355" cy="24" r="4" fill="#00ff88">
-  <animate attributeName="opacity" values="1;0.2;1" dur="1.2s" repeatCount="indefinite"/>
+<rect x="330" y="12" width="300" height="28" rx="14" fill="white" stroke="#e2e8f0" stroke-width="1.5"/>
+<circle cx="350" cy="26" r="5" fill="#10b981">
+  <animate attributeName="opacity" values="1;0.3;1" dur="1.2s" repeatCount="indefinite"/>
 </circle>
-<text x="366" y="29" fill="#00ff88" font-family="monospace" font-size="10" letter-spacing="1">SYSTEM ONLINE</text>
-<text x="530" y="29" fill="#00e5ff" font-family="monospace" font-size="10" opacity="0.6">● TEST MODE</text>
+<text x="360" y="31" fill="#1e293b" font-family="monospace" font-size="10" font-weight="bold" letter-spacing="1">SYSTEM ONLINE</text>
+<rect x="480" y="18" width="130" height="16" rx="8" fill="#fef3c7"/>
+<text x="545" y="30" text-anchor="middle" fill="#92400e" font-family="monospace" font-size="9" letter-spacing="0.5">⚠ TEST MODE ONLY</text>
 
-<!-- ═══ CONNECTION PATHS ═════════════════════════════════════════════════ -->
+<!-- ═══ CONNECTIONS ═══════════════════════════════════════════════════════ -->
 
 <!-- Claude ↔ MCP -->
-<path d="M182,255 C230,255 255,255 288,255" fill="none" stroke="#00e5ff" stroke-width="2" stroke-dasharray="8 4" marker-end="url(#a-cyan)" opacity="0.7"/>
-<path d="M288,265 C255,265 230,265 182,265" fill="none" stroke="#00e5ff" stroke-width="1" stroke-dasharray="5 5" marker-end="url(#a-cyan)" opacity="0.3"/>
+<path d="M185,252 C225,252 255,252 290,252" fill="none" stroke="#3b82f6" stroke-width="2.5" stroke-dasharray="8 4" marker-end="url(#a-blue)"/>
+<path d="M290,263 C255,263 225,263 185,263" fill="none" stroke="#93c5fd" stroke-width="1.5" stroke-dasharray="5 5" marker-end="url(#a-blue)" opacity="0.6"/>
 
 <!-- MCP ↔ Stripe -->
-<path d="M605,190 C645,190 695,168 738,158" fill="none" stroke="#a855f7" stroke-width="2" stroke-dasharray="8 4" marker-end="url(#a-violet)" opacity="0.7"/>
-<path d="M738,168 C700,178 655,196 605,200" fill="none" stroke="#a855f7" stroke-width="1" stroke-dasharray="5 5" marker-end="url(#a-violet)" opacity="0.3"/>
+<path d="M607,190 C645,190 695,168 740,158" fill="none" stroke="#8b5cf6" stroke-width="2.5" stroke-dasharray="8 4" marker-end="url(#a-violet)"/>
+<path d="M740,168 C700,178 650,198 607,200" fill="none" stroke="#c4b5fd" stroke-width="1.5" stroke-dasharray="5 5" marker-end="url(#a-violet)" opacity="0.6"/>
 
 <!-- MCP ↔ DB -->
-<path d="M605,322 C645,322 695,352 738,360" fill="none" stroke="#00ff88" stroke-width="2" stroke-dasharray="8 4" marker-end="url(#a-green)" opacity="0.7"/>
-<path d="M738,370 C700,360 655,332 605,332" fill="none" stroke="#00ff88" stroke-width="1" stroke-dasharray="5 5" marker-end="url(#a-green)" opacity="0.3"/>
+<path d="M607,322 C645,322 695,348 740,360" fill="none" stroke="#10b981" stroke-width="2.5" stroke-dasharray="8 4" marker-end="url(#a-green)"/>
+<path d="M740,370 C700,360 650,332 607,332" fill="none" stroke="#6ee7b7" stroke-width="1.5" stroke-dasharray="5 5" marker-end="url(#a-green)" opacity="0.6"/>
 
 <!-- Connection labels -->
-<rect x="195" y="237" width="90" height="14" rx="4" fill="#000d1a" stroke="#00e5ff" stroke-width="0.5" opacity="0.8"/>
-<text x="240" y="248" text-anchor="middle" fill="#00e5ff" font-family="monospace" font-size="8" letter-spacing="0.5">JSON-RPC · stdio</text>
+<rect x="193" y="232" width="96" height="16" rx="8" fill="white" stroke="#bfdbfe" stroke-width="1"/>
+<text x="241" y="244" text-anchor="middle" fill="#2563eb" font-family="monospace" font-size="8" font-weight="bold">JSON-RPC · stdio</text>
 
-<rect x="635" y="160" width="70" height="14" rx="4" fill="#0d0020" stroke="#a855f7" stroke-width="0.5" opacity="0.8" transform="rotate(-12,670,167)"/>
-<text x="670" y="171" text-anchor="middle" fill="#a855f7" font-family="monospace" font-size="8" transform="rotate(-12,670,171)">Stripe SDK</text>
+<rect x="646" y="154" width="64" height="16" rx="8" fill="white" stroke="#ddd6fe" stroke-width="1" transform="rotate(-14,678,162)"/>
+<text x="678" y="166" text-anchor="middle" fill="#7c3aed" font-family="monospace" font-size="8" font-weight="bold" transform="rotate(-14,678,166)">Stripe SDK</text>
 
-<rect x="635" y="316" width="78" height="14" rx="4" fill="#001a0d" stroke="#00ff88" stroke-width="0.5" opacity="0.8" transform="rotate(12,674,323)"/>
-<text x="674" y="327" text-anchor="middle" fill="#00ff88" font-family="monospace" font-size="8" transform="rotate(12,674,327)">SQLAlchemy</text>
+<rect x="641" y="320" width="76" height="16" rx="8" fill="white" stroke="#bbf7d0" stroke-width="1" transform="rotate(14,679,328)"/>
+<text x="679" y="332" text-anchor="middle" fill="#059669" font-family="monospace" font-size="8" font-weight="bold" transform="rotate(14,679,332)">SQLAlchemy</text>
 
-<!-- ═══ ANIMATED DATA PACKETS ════════════════════════════════════════════ -->
+<!-- ═══ ANIMATED DOTS ═════════════════════════════════════════════════════ -->
 
-<!-- Claude→MCP packets (cyan) -->
-<g filter="url(#neon-cyan)">
-  <g><circle r="6" fill="#00e5ff"><animateMotion dur="1.8s" repeatCount="indefinite" begin="0s"><mpath href="#p1"/></animateMotion><animate attributeName="opacity" values="0;1;1;0" dur="1.8s" repeatCount="indefinite" begin="0s"/></circle></g>
-  <g><circle r="4" fill="#67e8f9"><animateMotion dur="1.8s" repeatCount="indefinite" begin="0.7s"><mpath href="#p1"/></animateMotion><animate attributeName="opacity" values="0;0.8;0.8;0" dur="1.8s" repeatCount="indefinite" begin="0.7s"/></circle></g>
-  <g><circle r="3" fill="#a5f3fc"><animateMotion dur="1.8s" repeatCount="indefinite" begin="1.3s"><mpath href="#p1"/></animateMotion><animate attributeName="opacity" values="0;0.5;0.5;0" dur="1.8s" repeatCount="indefinite" begin="1.3s"/></circle></g>
+<!-- Claude→MCP (blue) -->
+<g filter="url(#dot-glow-blue)">
+  <circle r="7" fill="#2563eb"><animateMotion dur="1.8s" repeatCount="indefinite" begin="0s"><mpath href="#p1"/></animateMotion><animate attributeName="opacity" values="0;1;1;0" dur="1.8s" repeatCount="indefinite"/></circle>
+  <circle r="5" fill="#3b82f6"><animateMotion dur="1.8s" repeatCount="indefinite" begin="0.65s"><mpath href="#p1"/></animateMotion><animate attributeName="opacity" values="0;0.8;0.8;0" dur="1.8s" repeatCount="indefinite" begin="0.65s"/></circle>
+  <circle r="3" fill="#60a5fa"><animateMotion dur="1.8s" repeatCount="indefinite" begin="1.2s"><mpath href="#p1"/></animateMotion><animate attributeName="opacity" values="0;0.5;0.5;0" dur="1.8s" repeatCount="indefinite" begin="1.2s"/></circle>
 </g>
+<circle r="4" fill="#93c5fd"><animateMotion dur="2s" repeatCount="indefinite" begin="0.9s"><mpath href="#p1r"/></animateMotion><animate attributeName="opacity" values="0;0.6;0.6;0" dur="2s" repeatCount="indefinite" begin="0.9s"/></circle>
 
-<!-- MCP→Claude response (dim) -->
-<circle r="3.5" fill="#0891b2">
-  <animateMotion dur="2s" repeatCount="indefinite" begin="0.9s"><mpath href="#p1r"/></animateMotion>
-  <animate attributeName="opacity" values="0;0.5;0.5;0" dur="2s" repeatCount="indefinite" begin="0.9s"/>
-</circle>
-
-<!-- MCP→Stripe packets (violet) -->
-<g filter="url(#neon-violet)">
-  <g><circle r="6" fill="#a855f7"><animateMotion dur="1.5s" repeatCount="indefinite" begin="0.3s"><mpath href="#p2"/></animateMotion><animate attributeName="opacity" values="0;1;1;0" dur="1.5s" repeatCount="indefinite" begin="0.3s"/></circle></g>
-  <g><circle r="4" fill="#c084fc"><animateMotion dur="1.5s" repeatCount="indefinite" begin="1s"><mpath href="#p2"/></animateMotion><animate attributeName="opacity" values="0;0.8;0.8;0" dur="1.5s" repeatCount="indefinite" begin="1s"/></circle></g>
+<!-- MCP→Stripe (violet) -->
+<g filter="url(#dot-glow-purple)">
+  <circle r="7" fill="#7c3aed"><animateMotion dur="1.5s" repeatCount="indefinite" begin="0.3s"><mpath href="#p2"/></animateMotion><animate attributeName="opacity" values="0;1;1;0" dur="1.5s" repeatCount="indefinite" begin="0.3s"/></circle>
+  <circle r="5" fill="#8b5cf6"><animateMotion dur="1.5s" repeatCount="indefinite" begin="0.95s"><mpath href="#p2"/></animateMotion><animate attributeName="opacity" values="0;0.8;0.8;0" dur="1.5s" repeatCount="indefinite" begin="0.95s"/></circle>
 </g>
+<circle r="4" fill="#a78bfa"><animateMotion dur="1.5s" repeatCount="indefinite" begin="0.6s"><mpath href="#p2r"/></animateMotion><animate attributeName="opacity" values="0;0.7;0.7;0" dur="1.5s" repeatCount="indefinite" begin="0.6s"/></circle>
 
-<!-- Stripe→MCP response -->
-<circle r="4" fill="#7c3aed" filter="url(#neon-violet)">
-  <animateMotion dur="1.5s" repeatCount="indefinite" begin="0.6s"><mpath href="#p2r"/></animateMotion>
-  <animate attributeName="opacity" values="0;0.7;0.7;0" dur="1.5s" repeatCount="indefinite" begin="0.6s"/>
-</circle>
-
-<!-- MCP→DB packets (green) -->
-<g filter="url(#neon-green)">
-  <g><circle r="6" fill="#00ff88"><animateMotion dur="1.6s" repeatCount="indefinite" begin="0.15s"><mpath href="#p3"/></animateMotion><animate attributeName="opacity" values="0;1;1;0" dur="1.6s" repeatCount="indefinite" begin="0.15s"/></circle></g>
-  <g><circle r="4" fill="#34d399"><animateMotion dur="1.6s" repeatCount="indefinite" begin="0.8s"><mpath href="#p3"/></animateMotion><animate attributeName="opacity" values="0;0.8;0.8;0" dur="1.6s" repeatCount="indefinite" begin="0.8s"/></circle></g>
+<!-- MCP→DB (green) -->
+<g filter="url(#dot-glow-green)">
+  <circle r="7" fill="#059669"><animateMotion dur="1.6s" repeatCount="indefinite" begin="0.15s"><mpath href="#p3"/></animateMotion><animate attributeName="opacity" values="0;1;1;0" dur="1.6s" repeatCount="indefinite" begin="0.15s"/></circle>
+  <circle r="5" fill="#10b981"><animateMotion dur="1.6s" repeatCount="indefinite" begin="0.8s"><mpath href="#p3"/></animateMotion><animate attributeName="opacity" values="0;0.8;0.8;0" dur="1.6s" repeatCount="indefinite" begin="0.8s"/></circle>
 </g>
+<circle r="4" fill="#34d399"><animateMotion dur="1.6s" repeatCount="indefinite" begin="0.5s"><mpath href="#p3r"/></animateMotion><animate attributeName="opacity" values="0;0.7;0.7;0" dur="1.6s" repeatCount="indefinite" begin="0.5s"/></circle>
 
-<!-- DB→MCP response -->
-<circle r="4" fill="#059669" filter="url(#neon-green)">
-  <animateMotion dur="1.6s" repeatCount="indefinite" begin="0.5s"><mpath href="#p3r"/></animateMotion>
-  <animate attributeName="opacity" values="0;0.7;0.7;0" dur="1.6s" repeatCount="indefinite" begin="0.5s"/>
-</circle>
-
-<!-- ═══ CLAUDE DESKTOP BOX ═══════════════════════════════════════════════ -->
-<g filter="url(#neon-cyan)">
-  <rect x="18" y="198" width="164" height="115" rx="12" fill="url(#claude-bg)" stroke="#00e5ff" stroke-width="2">
-    <animate attributeName="stroke-opacity" values="0.6;1;0.6" dur="2.5s" repeatCount="indefinite"/>
+<!-- ═══ CLAUDE DESKTOP ════════════════════════════════════════════════════ -->
+<g filter="url(#shadow-blue)">
+  <rect x="18" y="196" width="167" height="118" rx="14" fill="url(#claude-fill)" stroke="#3b82f6" stroke-width="2.5">
+    <animate attributeName="stroke-opacity" values="0.7;1;0.7" dur="2.5s" repeatCount="indefinite"/>
   </rect>
 </g>
-<!-- Corner accents -->
-<line x1="18" y1="220" x2="38" y2="220" stroke="#00e5ff" stroke-width="1" opacity="0.5"/>
-<line x1="162" y1="220" x2="182" y2="220" stroke="#00e5ff" stroke-width="1" opacity="0.5"/>
+<!-- Top color bar -->
+<rect x="18" y="196" width="167" height="10" rx="14" fill="#3b82f6"/>
+<rect x="18" y="200" width="167" height="6" fill="#3b82f6"/>
+<!-- Traffic lights -->
+<circle cx="34" cy="201" r="3" fill="#ff5f57"/><circle cx="46" cy="201" r="3" fill="#febc2e"/><circle cx="58" cy="201" r="3" fill="#28c840"/>
 
-<text x="100" y="234" text-anchor="middle" font-size="28">🖥️</text>
-<text x="100" y="259" text-anchor="middle" fill="#00e5ff" font-family="monospace" font-size="13" font-weight="bold" filter="url(#neon-cyan)">Claude Desktop</text>
-<text x="100" y="275" text-anchor="middle" fill="#67e8f9" font-family="monospace" font-size="9" opacity="0.7">AI Client</text>
-<text x="100" y="292" text-anchor="middle" fill="#164e63" font-family="monospace" font-size="8">natural language input</text>
-<!-- Blink cursor -->
-<rect x="148" y="283" width="6" height="10" rx="1" fill="#00e5ff">
+<text x="101" y="235" text-anchor="middle" font-size="26">🖥️</text>
+<text x="101" y="258" text-anchor="middle" fill="#1e40af" font-family="monospace" font-size="13" font-weight="bold">Claude Desktop</text>
+<text x="101" y="274" text-anchor="middle" fill="#3b82f6" font-family="monospace" font-size="9">AI Client</text>
+<text x="101" y="290" text-anchor="middle" fill="#64748b" font-family="monospace" font-size="8">natural language input</text>
+<!-- cursor blink -->
+<rect x="148" y="281" width="5" height="9" rx="1" fill="#3b82f6">
   <animate attributeName="opacity" values="1;0;1" dur="1s" repeatCount="indefinite"/>
 </rect>
 
-<!-- ═══ MCP SERVER (CENTER BIG BOX) ══════════════════════════════════════ -->
-<rect x="288" y="78" width="317" height="364" rx="14" fill="url(#mcp-bg)" stroke="#6d28d9" stroke-width="2"/>
-<!-- Pulsing outer glow ring -->
-<rect x="288" y="78" width="317" height="364" rx="14" fill="none" stroke="#bf40ff" stroke-width="2">
-  <animate attributeName="opacity" values="0.1;0.5;0.1" dur="3s" repeatCount="indefinite"/>
-  <animate attributeName="stroke-width" values="1;3;1" dur="3s" repeatCount="indefinite"/>
-</rect>
+<!-- ═══ MCP SERVER ════════════════════════════════════════════════════════ -->
+<g filter="url(#shadow-purple)">
+  <rect x="290" y="78" width="317" height="375" rx="16" fill="url(#mcp-fill)" stroke="#7c3aed" stroke-width="2.5">
+    <animate attributeName="stroke-opacity" values="0.6;1;0.6" dur="3s" repeatCount="indefinite"/>
+  </rect>
+</g>
 
-<!-- MCP title bar -->
-<rect x="302" y="92" width="289" height="30" rx="7" fill="#1a0035" stroke="#6d28d9" stroke-width="1"/>
-<text x="446" y="112" text-anchor="middle" fill="#bf40ff" font-family="monospace" font-size="11" font-weight="bold" letter-spacing="2" filter="url(#neon-purple)">⚙️  THE ORCHESTRATOR</text>
+<!-- MCP top bar -->
+<rect x="290" y="78" width="317" height="38" rx="16" fill="#7c3aed"/>
+<rect x="290" y="92" width="317" height="24" fill="#7c3aed"/>
+<text x="448" y="102" text-anchor="middle" fill="white" font-family="monospace" font-size="12" font-weight="bold" letter-spacing="2">⚙️  THE ORCHESTRATOR</text>
 
-<!-- ── Layer 1: MCP ── -->
-<rect x="302" y="133" width="289" height="82" rx="9" fill="#0a0018" stroke="#4f46e5" stroke-width="1.5"/>
-<rect x="302" y="133" width="289" height="82" rx="9" fill="none" stroke="#818cf8" stroke-width="1">
-  <animate attributeName="opacity" values="0.2;0.7;0.2" dur="2s" repeatCount="indefinite"/>
-</rect>
-<text x="318" y="155" fill="#818cf8" font-family="monospace" font-size="11" font-weight="bold" filter="url(#neon-purple)">🔌 MCP Layer</text>
-<text x="318" y="172" fill="#4338ca" font-family="monospace" font-size="9">mcp_server.py</text>
-<text x="318" y="187" fill="#312e81" font-family="monospace" font-size="8">7 tools  ·  2 resources  ·  2 prompts</text>
-<!-- Tag badges -->
-<rect x="490" y="143" width="40" height="14" rx="4" fill="#1e1b4b"/>
-<text x="510" y="154" text-anchor="middle" fill="#818cf8" font-family="monospace" font-size="7">tools</text>
-<rect x="536" y="143" width="48" height="14" rx="4" fill="#1e1b4b"/>
-<text x="560" y="154" text-anchor="middle" fill="#818cf8" font-family="monospace" font-size="7">prompts</text>
+<!-- Corner tab -->
+<rect x="305" y="125" width="287" height="14" rx="4" fill="#f3e8ff"/>
+<text x="448" y="136" text-anchor="middle" fill="#6d28d9" font-family="monospace" font-size="8" letter-spacing="1">payment-ops MCP server</text>
 
-<!-- ── Layer 2: Service ── -->
-<rect x="302" y="226" width="289" height="82" rx="9" fill="#0a0018" stroke="#7c3aed" stroke-width="1.5"/>
-<rect x="302" y="226" width="289" height="82" rx="9" fill="none" stroke="#a78bfa" stroke-width="1">
-  <animate attributeName="opacity" values="0.2;0.7;0.2" dur="2.4s" repeatCount="indefinite" begin="0.4s"/>
-</rect>
-<text x="318" y="248" fill="#a78bfa" font-family="monospace" font-size="11" font-weight="bold" filter="url(#neon-purple)">🧠 Service Layer</text>
-<text x="318" y="265" fill="#5b21b6" font-family="monospace" font-size="9">payment_service.py</text>
-<text x="318" y="280" fill="#3b0764" font-family="monospace" font-size="8">90-day rule  ·  human-in-the-loop gate</text>
-<!-- Pulse dot -->
-<circle cx="574" cy="255" r="5" fill="#a78bfa" filter="url(#neon-purple)">
-  <animate attributeName="r" values="4;7;4" dur="1.5s" repeatCount="indefinite"/>
-  <animate attributeName="opacity" values="0.8;0.3;0.8" dur="1.5s" repeatCount="indefinite"/>
+<!-- ── Layer 1: MCP Layer ── -->
+<rect x="305" y="148" width="287" height="78" rx="10" fill="white" stroke="#6366f1" stroke-width="2"/>
+<rect x="305" y="148" width="287" height="26" rx="10" fill="#eef2ff"/>
+<rect x="305" y="162" width="287" height="12" fill="#eef2ff"/>
+<text x="320" y="164" fill="#4338ca" font-family="monospace" font-size="10" font-weight="bold">🔌  MCP Layer</text>
+<rect x="516" y="151" width="38" height="14" rx="7" fill="#e0e7ff"/>
+<text x="535" y="162" text-anchor="middle" fill="#4338ca" font-family="monospace" font-size="7" font-weight="bold">tools</text>
+<rect x="558" y="151" width="28" height="14" rx="7" fill="#e0e7ff"/>
+<text x="572" y="162" text-anchor="middle" fill="#4338ca" font-family="monospace" font-size="7" font-weight="bold">MCP</text>
+<text x="320" y="192" fill="#475569" font-family="monospace" font-size="9">mcp_server.py</text>
+<text x="320" y="207" fill="#94a3b8" font-family="monospace" font-size="8">7 tools  ·  2 resources  ·  2 prompts</text>
+<!-- Animated indicator -->
+<circle cx="574" cy="192" r="5" fill="#6366f1">
+  <animate attributeName="r" values="4;7;4" dur="2s" repeatCount="indefinite"/>
+  <animate attributeName="opacity" values="1;0.3;1" dur="2s" repeatCount="indefinite"/>
 </circle>
 
-<!-- ── Layer 3: Integration ── -->
-<rect x="302" y="319" width="289" height="82" rx="9" fill="#0a0018" stroke="#0891b2" stroke-width="1.5"/>
-<rect x="302" y="319" width="289" height="82" rx="9" fill="none" stroke="#38bdf8" stroke-width="1">
-  <animate attributeName="opacity" values="0.2;0.7;0.2" dur="2.2s" repeatCount="indefinite" begin="0.8s"/>
-</rect>
-<text x="318" y="341" fill="#38bdf8" font-family="monospace" font-size="11" font-weight="bold">🔗 Integration Layer</text>
-<text x="318" y="358" fill="#075985" font-family="monospace" font-size="9">stripe_client.py  ·  database.py</text>
-<text x="318" y="373" fill="#0c4a6e" font-family="monospace" font-size="8">Stripe Python SDK  ·  SQLAlchemy ORM</text>
+<!-- ── Layer 2: Service Layer ── -->
+<rect x="305" y="237" width="287" height="78" rx="10" fill="white" stroke="#8b5cf6" stroke-width="2"/>
+<rect x="305" y="237" width="287" height="26" rx="10" fill="#f5f3ff"/>
+<rect x="305" y="251" width="287" height="12" fill="#f5f3ff"/>
+<text x="320" y="253" fill="#6d28d9" font-family="monospace" font-size="10" font-weight="bold">🧠  Service Layer</text>
+<rect x="510" y="240" width="76" height="14" rx="7" fill="#ede9fe"/>
+<text x="548" y="251" text-anchor="middle" fill="#6d28d9" font-family="monospace" font-size="7" font-weight="bold">business rules</text>
+<text x="320" y="281" fill="#475569" font-family="monospace" font-size="9">payment_service.py</text>
+<text x="320" y="296" fill="#94a3b8" font-family="monospace" font-size="8">90-day rule  ·  human-in-the-loop gate</text>
+<circle cx="574" cy="281" r="5" fill="#8b5cf6">
+  <animate attributeName="r" values="4;7;4" dur="2.4s" repeatCount="indefinite" begin="0.4s"/>
+  <animate attributeName="opacity" values="1;0.3;1" dur="2.4s" repeatCount="indefinite" begin="0.4s"/>
+</circle>
+
+<!-- ── Layer 3: Integration Layer ── -->
+<rect x="305" y="326" width="287" height="78" rx="10" fill="white" stroke="#0ea5e9" stroke-width="2"/>
+<rect x="305" y="326" width="287" height="26" rx="10" fill="#f0f9ff"/>
+<rect x="305" y="340" width="287" height="12" fill="#f0f9ff"/>
+<text x="320" y="342" fill="#0369a1" font-family="monospace" font-size="10" font-weight="bold">🔗  Integration Layer</text>
+<rect x="518" y="329" width="68" height="14" rx="7" fill="#e0f2fe"/>
+<text x="552" y="340" text-anchor="middle" fill="#0369a1" font-family="monospace" font-size="7" font-weight="bold">SDK · ORM</text>
+<text x="320" y="370" fill="#475569" font-family="monospace" font-size="9">stripe_client.py  ·  database.py</text>
+<text x="320" y="385" fill="#94a3b8" font-family="monospace" font-size="8">Stripe Python SDK  ·  SQLAlchemy ORM</text>
+<circle cx="574" cy="370" r="5" fill="#0ea5e9">
+  <animate attributeName="r" values="4;7;4" dur="2.2s" repeatCount="indefinite" begin="0.8s"/>
+  <animate attributeName="opacity" values="1;0.3;1" dur="2.2s" repeatCount="indefinite" begin="0.8s"/>
+</circle>
 
 <!-- Safety banner -->
-<rect x="302" y="412" width="289" height="18" rx="5" fill="#1a0000" stroke="#dc2626" stroke-width="1">
-  <animate attributeName="stroke-opacity" values="0.5;1;0.5" dur="1.8s" repeatCount="indefinite"/>
+<rect x="305" y="416" width="287" height="26" rx="8" fill="#fef2f2" stroke="#fca5a5" stroke-width="1.5">
+  <animate attributeName="stroke-opacity" values="0.5;1;0.5" dur="2s" repeatCount="indefinite"/>
 </rect>
-<text x="446" y="424" text-anchor="middle" fill="#ef4444" font-family="monospace" font-size="8" letter-spacing="0.5">🔒  HUMAN CONFIRM REQUIRED BEFORE MONEY MOVES</text>
+<text x="448" y="432" text-anchor="middle" fill="#dc2626" font-family="monospace" font-size="9" font-weight="bold">🔒  HUMAN CONFIRM REQUIRED BEFORE MONEY MOVES</text>
 
 <!-- ═══ STRIPE BOX ════════════════════════════════════════════════════════ -->
-<g filter="url(#neon-violet)">
-  <rect x="740" y="88" width="205" height="140" rx="12" fill="url(#stripe-bg)" stroke="#7c3aed" stroke-width="2">
-    <animate attributeName="stroke-opacity" values="0.5;1;0.5" dur="1.9s" repeatCount="indefinite" begin="0.3s"/>
+<g filter="url(#shadow-violet)">
+  <rect x="740" y="90" width="202" height="148" rx="14" fill="url(#stripe-fill)" stroke="#7c3aed" stroke-width="2.5">
+    <animate attributeName="stroke-opacity" values="0.6;1;0.6" dur="2s" repeatCount="indefinite" begin="0.3s"/>
   </rect>
 </g>
-<!-- Stripe header accent -->
-<rect x="740" y="88" width="205" height="30" rx="12" fill="#1a003a" opacity="0.8"/>
-<rect x="740" y="108" width="205" height="10" fill="#1a003a" opacity="0.8"/>
-<text x="842" y="108" text-anchor="middle" fill="#7c3aed" font-family="monospace" font-size="9" letter-spacing="2">💳 STRIPE API</text>
+<!-- Top bar -->
+<rect x="740" y="90" width="202" height="36" rx="14" fill="#7c3aed"/>
+<rect x="740" y="110" width="202" height="16" fill="#7c3aed"/>
+<text x="841" y="113" text-anchor="middle" fill="white" font-family="monospace" font-size="10" font-weight="bold" letter-spacing="1">💳  STRIPE API</text>
 
-<text x="842" y="148" text-anchor="middle" fill="#e9d5ff" font-family="monospace" font-size="12" font-weight="bold">Stripe API</text>
-<text x="842" y="164" text-anchor="middle" fill="#6d28d9" font-family="monospace" font-size="9">PaymentIntents · Refunds</text>
-<text x="842" y="180" text-anchor="middle" fill="#4c1d95" font-family="monospace" font-size="8">Customers · Payment Links</text>
+<text x="841" y="152" text-anchor="middle" fill="#4c1d95" font-family="monospace" font-size="13" font-weight="bold">Stripe API</text>
+<text x="841" y="170" text-anchor="middle" fill="#6d28d9" font-family="monospace" font-size="9">PaymentIntents · Refunds</text>
+<text x="841" y="186" text-anchor="middle" fill="#7c3aed" font-family="monospace" font-size="8">Customers · Payment Links</text>
 
-<!-- TEST MODE badge -->
-<rect x="755" y="191" width="175" height="26" rx="5" fill="#0d0020" stroke="#7c3aed" stroke-width="1" opacity="0.8"/>
-<text x="842" y="208" text-anchor="middle" fill="#a78bfa" font-family="monospace" font-size="9" letter-spacing="1">rk_test_ · NO REAL MONEY</text>
+<!-- TEST badge -->
+<rect x="752" y="197" width="178" height="28" rx="6" fill="#ede9fe" stroke="#c4b5fd" stroke-width="1"/>
+<text x="841" y="215" text-anchor="middle" fill="#5b21b6" font-family="monospace" font-size="9" font-weight="bold">rk_test_  ·  NO REAL MONEY</text>
 
-<!-- Live blink -->
-<circle cx="753" cy="100" r="4" fill="#00ff88">
-  <animate attributeName="opacity" values="1;0.1;1" dur="1.2s" repeatCount="indefinite"/>
+<!-- Live indicator -->
+<circle cx="754" cy="103" r="5" fill="#10b981">
+  <animate attributeName="opacity" values="1;0.2;1" dur="1.2s" repeatCount="indefinite"/>
 </circle>
-<text x="761" y="104" fill="#00ff88" font-family="monospace" font-size="8">live</text>
+<text x="763" y="107" fill="white" font-family="monospace" font-size="8" font-weight="bold">live</text>
 
 <!-- ═══ ORDERS DB BOX ═════════════════════════════════════════════════════ -->
-<g filter="url(#neon-green)">
-  <rect x="740" y="308" width="205" height="155" rx="12" fill="url(#db-bg)" stroke="#059669" stroke-width="2">
-    <animate attributeName="stroke-opacity" values="0.5;1;0.5" dur="2.3s" repeatCount="indefinite" begin="0.6s"/>
+<g filter="url(#shadow-green)">
+  <rect x="740" y="308" width="202" height="162" rx="14" fill="url(#db-fill)" stroke="#16a34a" stroke-width="2.5">
+    <animate attributeName="stroke-opacity" values="0.6;1;0.6" dur="2.3s" repeatCount="indefinite" begin="0.6s"/>
   </rect>
 </g>
-<!-- DB header accent -->
-<rect x="740" y="308" width="205" height="28" rx="12" fill="#002210" opacity="0.8"/>
-<rect x="740" y="326" width="205" height="10" fill="#002210" opacity="0.8"/>
-<text x="842" y="326" text-anchor="middle" fill="#059669" font-family="monospace" font-size="9" letter-spacing="2">🗄️ ORDERS DB</text>
+<!-- Top bar -->
+<rect x="740" y="308" width="202" height="36" rx="14" fill="#16a34a"/>
+<rect x="740" y="328" width="202" height="16" fill="#16a34a"/>
+<text x="841" y="331" text-anchor="middle" fill="white" font-family="monospace" font-size="10" font-weight="bold" letter-spacing="1">🗄️  ORDERS DB</text>
 
-<text x="842" y="362" text-anchor="middle" fill="#d1fae5" font-family="monospace" font-size="12" font-weight="bold">Orders DB</text>
+<text x="841" y="368" text-anchor="middle" fill="#14532d" font-family="monospace" font-size="13" font-weight="bold">Orders DB</text>
 
-<!-- Schema lines -->
-<text x="760" y="382" fill="#065f46" font-family="monospace" font-size="8">▸ customers</text>
-<text x="760" y="396" fill="#065f46" font-family="monospace" font-size="8">▸ orders</text>
-<text x="760" y="410" fill="#10b981" font-family="monospace" font-size="8" font-weight="bold">▸ refund_log ✓ audit</text>
-<text x="760" y="424" fill="#064e3b" font-family="monospace" font-size="8">▸ SQLite / Postgres</text>
+<!-- Schema rows -->
+<rect x="755" y="376" width="172" height="12" rx="3" fill="white" opacity="0.7"/>
+<text x="764" y="386" fill="#166534" font-family="monospace" font-size="8">▸ customers</text>
+<rect x="755" y="392" width="172" height="12" rx="3" fill="white" opacity="0.7"/>
+<text x="764" y="402" fill="#166534" font-family="monospace" font-size="8">▸ orders</text>
+<rect x="755" y="408" width="172" height="12" rx="3" fill="#d1fae5" stroke="#86efac" stroke-width="1"/>
+<text x="764" y="418" fill="#065f46" font-family="monospace" font-size="8" font-weight="bold">▸ refund_log  ✓  audit trail</text>
+<text x="841" y="440" text-anchor="middle" fill="#6b7280" font-family="monospace" font-size="8">SQLite / Postgres</text>
 
-<!-- Write flash -->
-<rect x="880" y="395" width="52" height="15" rx="4" fill="#002210" stroke="#00ff88" stroke-width="1">
-  <animate attributeName="opacity" values="0;0;1;1;0" dur="3s" repeatCount="indefinite" begin="1s"/>
+<!-- WRITE flash badge -->
+<rect x="870" y="390" width="58" height="16" rx="6" fill="#16a34a">
+  <animate attributeName="opacity" values="0;0;0;1;1;1;0" dur="3s" repeatCount="indefinite" begin="1s"/>
 </rect>
-<text x="906" y="406" text-anchor="middle" fill="#00ff88" font-family="monospace" font-size="7">WRITE ✓</text>
+<text x="899" y="401" text-anchor="middle" fill="white" font-family="monospace" font-size="8" font-weight="bold">WRITE ✓</text>
 
-<!-- Synced blink -->
-<circle cx="753" cy="320" r="4" fill="#10b981">
-  <animate attributeName="opacity" values="1;0.1;1" dur="1.6s" repeatCount="indefinite" begin="0.4s"/>
+<!-- Synced indicator -->
+<circle cx="754" cy="321" r="5" fill="white">
+  <animate attributeName="opacity" values="1;0.2;1" dur="1.6s" repeatCount="indefinite" begin="0.4s"/>
 </circle>
-<text x="761" y="324" fill="#10b981" font-family="monospace" font-size="8">synced</text>
+<text x="763" y="325" fill="white" font-family="monospace" font-size="8" font-weight="bold">synced</text>
 
 <!-- ═══ STEP BADGES ════════════════════════════════════════════════════════ -->
-<!-- Step 1 badge on Claude→MCP line -->
-<circle cx="235" cy="245" r="9" fill="#050b14" stroke="#00e5ff" stroke-width="1.5"/>
-<text x="235" y="249" text-anchor="middle" fill="#00e5ff" font-family="monospace" font-size="8" font-weight="bold">①</text>
+<circle cx="237" cy="242" r="11" fill="white" stroke="#3b82f6" stroke-width="2"/>
+<text x="237" y="246" text-anchor="middle" fill="#2563eb" font-family="monospace" font-size="10" font-weight="bold">①</text>
 
-<!-- Step 2 badge on MCP→Stripe line -->
-<circle cx="668" cy="162" r="9" fill="#050b14" stroke="#a855f7" stroke-width="1.5" transform="rotate(-12,668,162)"/>
-<text x="668" y="166" text-anchor="middle" fill="#a855f7" font-family="monospace" font-size="8" font-weight="bold">③</text>
+<circle cx="668" cy="162" r="11" fill="white" stroke="#8b5cf6" stroke-width="2"/>
+<text x="668" y="166" text-anchor="middle" fill="#7c3aed" font-family="monospace" font-size="10" font-weight="bold">③</text>
 
-<!-- Step 3 badge on MCP→DB line -->
-<circle cx="668" cy="336" r="9" fill="#050b14" stroke="#00ff88" stroke-width="1.5"/>
-<text x="668" y="340" text-anchor="middle" fill="#00ff88" font-family="monospace" font-size="8" font-weight="bold">②</text>
+<circle cx="668" cy="338" r="11" fill="white" stroke="#10b981" stroke-width="2"/>
+<text x="668" y="342" text-anchor="middle" fill="#059669" font-family="monospace" font-size="10" font-weight="bold">②</text>
 
 <!-- ═══ FOOTER ════════════════════════════════════════════════════════════ -->
-<rect x="280" y="458" width="400" height="22" rx="8" fill="#050b14" stroke="#1e293b" stroke-width="1" opacity="0.8"/>
-<text x="480" y="473" text-anchor="middle" fill="#1e3a5f" font-family="monospace" font-size="9" letter-spacing="1">Python · MCP SDK · Stripe API · SQLAlchemy · pytest · 99% coverage</text>
+<rect x="260" y="464" width="440" height="24" rx="12" fill="white" stroke="#e2e8f0" stroke-width="1"/>
+<text x="480" y="480" text-anchor="middle" fill="#64748b" font-family="monospace" font-size="9">Python · MCP SDK · Stripe API · SQLAlchemy · pytest · 99% coverage</text>
 
 </svg>
